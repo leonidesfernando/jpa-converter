@@ -1,4 +1,4 @@
-package org.opensource.leonidesfernando.jpa.converter.util;
+package com.github.leonidesfernando.jpa.converter.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

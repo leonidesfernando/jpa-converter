@@ -13,4 +13,4 @@
  *
  * @since 1.0
  */
-package org.opensource.leonidesfernando.jpa.converter.java.time;
+package com.github.leonidesfernando.jpa.converter.java.time;

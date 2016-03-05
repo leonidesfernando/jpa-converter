@@ -1,4 +1,4 @@
-package org.opensource.leonidesfernando.jpa.converter.java.time;
+package com.github.leonidesfernando.jpa.converter.java.time;
 
 
 import org.testng.annotations.BeforeClass;

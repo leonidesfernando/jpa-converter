@@ -25,50 +25,48 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.opensource.leonidesfernando.jpa.converter.java.time;
+package com.github.leonidesfernando.jpa.converter.java.time;
 
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import java.time.YearMonth;
-import java.util.Objects;
+import java.time.Year;
 
 /**
- * Converts {@link java.time.YearMonth} to {@link String} and back
+ * Converts {@link java.time.Year} to {@link String} and back
  * in support of JPA persistence.
  * <p>
  * The existence of this class in the classpath and it being known by the persistence unit
  * is sufficient
- * to allow you to use the as-of Java SE 8 {@link java.time.YearMonth} class in
+ * to allow you to use the as-of Java SE 8 {@link java.time.Year} class in
  * an {@link javax.persistence.Entity} or in other persistable classes.
  * <p>
  * Important: the setting of <code>@Converter(autoApply = true)</code>
  * in this class will make this conversion
  * automatically effective for all Entities that have one or more
- * persistent {@link java.time.YearMonth} properties.
+ * persistent {@link java.time.Year} properties.
  * <p>
  * The persistence provider must minimally support
  * <a href="https://jcp.org/aboutJava/communityprocess/final/jsr338/index.html">JPA 2.1</a>
  * for this to work.
  */
 @Converter(autoApply = true)
-public class YearMonthPersistenceConverter implements AttributeConverter<YearMonth, String> {
+public class YearPersistenceConverter implements AttributeConverter<Year, Integer> {
 
     /**
-     * @return Outputs this year-month as a String, such as 2007-12. The output will be in the format uuuu-MM
-     * @see YearMonth#toString()
+     * @return A year in the ISO-8601 calendar system, such as 2007
      */
     @Override
-    public String convertToDatabaseColumn(YearMonth entityValue) {
-        return Objects.toString(entityValue, null);
+    public Integer convertToDatabaseColumn(Year entityValue) {
+        return (entityValue == null) ? null : entityValue.getValue();
     }
 
 
     @Override
-    public YearMonth convertToEntityAttribute(String databaseValue) {
+    public Year convertToEntityAttribute(Integer databaseValue) {
 
-        if(databaseValue != null && !databaseValue.isEmpty()) {
-            return YearMonth.parse(databaseValue);
+        if(databaseValue != null) {
+            return Year.of(databaseValue);
         }
         return null;
     }

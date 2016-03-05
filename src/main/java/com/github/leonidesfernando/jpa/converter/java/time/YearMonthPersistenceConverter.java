@@ -25,44 +25,50 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.opensource.leonidesfernando.jpa.converter.java.time;
+package com.github.leonidesfernando.jpa.converter.java.time;
 
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.time.YearMonth;
+import java.util.Objects;
 
 /**
- * Converts {@link LocalDateTime} to {@link java.sql.Time} and back
+ * Converts {@link java.time.YearMonth} to {@link String} and back
  * in support of JPA persistence.
  * <p>
- * The existence of this class in the classpath and it being known by the persistence unit is sufficient
- * to allow you to use the as-of Java 8 {@link LocalDateTime} class in
+ * The existence of this class in the classpath and it being known by the persistence unit
+ * is sufficient
+ * to allow you to use the as-of Java SE 8 {@link java.time.YearMonth} class in
  * an {@link javax.persistence.Entity} or in other persistable classes.
  * <p>
  * Important: the setting of <code>@Converter(autoApply = true)</code>
  * in this class will make this conversion
- * effective for all Entities that have one or more
- * persistent {@link java.time.LocalDateTime} properties.
+ * automatically effective for all Entities that have one or more
+ * persistent {@link java.time.YearMonth} properties.
  * <p>
  * The persistence provider must minimally support
  * <a href="https://jcp.org/aboutJava/communityprocess/final/jsr338/index.html">JPA 2.1</a>
  * for this to work.
  */
 @Converter(autoApply = true)
-public class LocalDateTimePersistenceConverter implements AttributeConverter<LocalDateTime, Timestamp> {
+public class YearMonthPersistenceConverter implements AttributeConverter<YearMonth, String> {
 
+    /**
+     * @return Outputs this year-month as a String, such as 2007-12. The output will be in the format uuuu-MM
+     * @see YearMonth#toString()
+     */
     @Override
-    public java.sql.Timestamp convertToDatabaseColumn(LocalDateTime entityValue) {
-        return (entityValue == null) ? null : Timestamp.valueOf(entityValue);
+    public String convertToDatabaseColumn(YearMonth entityValue) {
+        return Objects.toString(entityValue, null);
     }
 
-    @Override
-    public LocalDateTime convertToEntityAttribute(Timestamp databaseValue) {
 
-        if(databaseValue != null) {
-            return databaseValue.toLocalDateTime();
+    @Override
+    public YearMonth convertToEntityAttribute(String databaseValue) {
+
+        if(databaseValue != null && !databaseValue.isEmpty()) {
+            return YearMonth.parse(databaseValue);
         }
         return null;
     }
