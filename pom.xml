@@ -121,6 +121,20 @@
       <tag>jpa-converter-0.1</tag>
   </scm>
 
+    <developers>
+        <developer>
+            <id>leonides.fernando</id>
+            <name>Leonides Fernando de Oliveira</name>
+            <email>leonides.fernando@gmail.com</email>
+            <organization>HOME</organization>
+            <organizationUrl>http://leonidesfernando.github.io/jpa-converver</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-4</timezone>
+        </developer>
+    </developers>
+
     <distributionManagement>
         <snapshotRepository>
             <id>snapshots-sonatype</id>
