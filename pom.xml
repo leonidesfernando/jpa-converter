@@ -7,6 +7,11 @@
     <version>0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <name>JPA Converter</name>
+    <description>JPA Converter</description>
+    <inceptionYear>2016</inceptionYear>
+    <url>http://leonidesfernando.github.io/${project.artifactId}/</url>
+
     <licenses>
         <license>
             <name>LGPl 2.1</name>
@@ -112,6 +117,7 @@
     <scm>
         <url>https://github.com/leonidesfernando/jpa-converver.git</url>
         <connection>scm:git:https://github.com/leonidesfernando/jpa-converver.git</connection>
+        <developerConnection>scm:git:https://github.com/leonidesfernando/jpa-converver.git</developerConnection>
       <tag>jpa-converter-0.1</tag>
   </scm>
 
