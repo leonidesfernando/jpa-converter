@@ -4,7 +4,7 @@
 
     <groupId>com.github.leonidesfernando</groupId>
     <artifactId>jpa-converter</artifactId>
-    <version>0.2</version>
+    <version>0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <licenses>
@@ -112,7 +112,7 @@
     <scm>
         <url>https://github.com/leonidesfernando/jpa-converver.git</url>
         <connection>scm:git:https://github.com/leonidesfernando/jpa-converver.git</connection>
-      <tag>jpa-converter-0.2</tag>
+      <tag>jpa-converter-0.1</tag>
   </scm>
 
     <distributionManagement>
