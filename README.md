@@ -1,4 +1,4 @@
-# jpa-converver
+# jpa-converter
 É uma biblioteca para ajudar os desenvolvedores Java que fazem uso da JPA, persistir os principais tipos do pacote <code>java.time</code> do _Java8_.
 A versão `0.4` suporta os tipos:
 
