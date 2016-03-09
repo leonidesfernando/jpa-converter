@@ -46,7 +46,7 @@ No _pom.xml_ defina o repositório e a dependência
 
 
 ## 3. Mapeie os tipos suportados pelo jpa-converter nas suas entidades
-O mapeamento fica totalmente transparente, não é necessário realizar nem
+O mapeamento fica totalmente transparente, não é necessário realizar nenhuma outra configuração.
 
 ```java
 	@NotNull(message="{data.cadastro.notnull}")
