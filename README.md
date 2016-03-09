@@ -1,5 +1,5 @@
 # jpa-converver
-É uma biblioteca para ajudar os desenvolvedores a persistir os principais tipos do pacote <code>java.time</code> do _Java8_.
+É uma biblioteca para ajudar os desenvolvedores Java a persistir os principais tipos do pacote <code>java.time</code> do _Java8_.
 A versão `0.4` suporta os tipos:
 ```java
   java.time.LocalDate
