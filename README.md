@@ -71,4 +71,6 @@ Basta entrar no grupo [JPA-Conveter Group] (https://groups.google.com/forum/#!fo
 	
 # Licença
 O *jpa-converter* está sob a licença LGPl 2.1.Veja a licença inclusa no projeto para mais detalhes ou acesse: http://www.gnu.org/licenses/lgpl-2.1.html
-	
+
+# Site
+http://leonidesfernando.github.io/jpa-converter/
