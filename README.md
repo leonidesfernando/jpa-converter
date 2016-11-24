@@ -1,4 +1,4 @@
-{<img src="https://app.codeship.com/projects/7db66be0-5b83-0134-0c1c-2a2c89969ad5/status?branch=master" alt="Status?branch=master" />}
+<img src="https://app.codeship.com/projects/7db66be0-5b83-0134-0c1c-2a2c89969ad5/status?branch=master" alt="Status?branch=master" />
 
 # jpa-converter
 É uma biblioteca para ajudar os desenvolvedores Java que fazem uso da JPA, persistir os principais tipos do pacote <code>java.time</code> do _Java8_.
