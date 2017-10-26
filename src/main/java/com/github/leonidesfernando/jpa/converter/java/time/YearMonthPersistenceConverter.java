@@ -31,7 +31,6 @@ package com.github.leonidesfernando.jpa.converter.java.time;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.time.YearMonth;
-import java.util.Objects;
 
 /**
  * Converts {@link java.time.YearMonth} to {@link String} and back
@@ -52,23 +51,26 @@ import java.util.Objects;
  * for this to work.
  */
 @Converter(autoApply = true)
-public class YearMonthPersistenceConverter implements AttributeConverter<YearMonth, String> {
+public class YearMonthPersistenceConverter implements AttributeConverter<YearMonth, Integer> {
 
     /**
      * @return Outputs this year-month as a String, such as 2007-12. The output will be in the format uuuu-MM
      * @see YearMonth#toString()
      */
     @Override
-    public String convertToDatabaseColumn(YearMonth entityValue) {
-        return Objects.toString(entityValue, null);
+    public Integer convertToDatabaseColumn(final YearMonth entityValue) {
+        if(entityValue != null) {
+            return entityValue.getYear() * 100 + entityValue.getMonthValue();
+        }
+        return null;
     }
 
 
     @Override
-    public YearMonth convertToEntityAttribute(String databaseValue) {
+    public YearMonth convertToEntityAttribute(final Integer databaseValue) {
 
-        if(databaseValue != null && !databaseValue.isEmpty()) {
-            return YearMonth.parse(databaseValue);
+        if(databaseValue != null) {
+            return YearMonth.of(databaseValue / 100, databaseValue % 100);
         }
         return null;
     }
