@@ -28,7 +28,7 @@ No _pom.xml_ defina o repositório e a dependência
 		<dependency>
 			<groupId>com.github.leonidesfernando</groupId>
 			<artifactId>jpa-converter</artifactId>
-			<version>0.4</version>
+			<version>0.7</version>
 		</dependency>
 ```
 
@@ -68,6 +68,8 @@ O mapeamento fica totalmente transparente, não é necessário realizar nenhuma 
 Versão 0.7 otimizando persistência `YearMonth` de `String` para `Integer`.
 
 Guia de migração as versões anteriores para a 0.7:
+
+Sql's para o _Postgresql_
 
 Na(s) tabela(s) que possui o tipo Year, criar uma coluna que passará armazenar o tipo YearMonth persistido:
 ```sql
