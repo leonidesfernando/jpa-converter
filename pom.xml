@@ -21,7 +21,6 @@
     </licenses>
 
 
-
     <build>
         <plugins>
             <plugin>
@@ -105,7 +104,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jpa.version>2.0.0</jpa.version>
-        <hibernate.version>4.3.2.Final</hibernate.version>
         <slf4j.version>1.6.6</slf4j.version>
     </properties>
 
@@ -113,8 +111,7 @@
         <url>https://github.com/leonidesfernando/jpa-converver.git</url>
         <connection>scm:git:https://github.com/leonidesfernando/jpa-converver.git</connection>
         <developerConnection>scm:git:https://github.com/leonidesfernando/jpa-converver.git</developerConnection>
-      <tag>jpa-converter-0.1</tag>
-  </scm>
+    </scm>
 
     <developers>
         <developer>
