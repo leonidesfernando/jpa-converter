@@ -1,6 +1,8 @@
+<img src="https://app.codeship.com/projects/7db66be0-5b83-0134-0c1c-2a2c89969ad5/status?branch=master" alt="Status?branch=master" />
+
 # jpa-converter
 É uma biblioteca para ajudar os desenvolvedores Java que fazem uso da JPA, persistir os principais tipos do pacote <code>java.time</code> do _Java8_.
-A versão `0.4` suporta os tipos:
+A versão `0.6` suporta os tipos:
 
 ```java
   java.time.LocalDate
@@ -28,7 +30,7 @@ No _pom.xml_ defina o repositório e a dependência
 		<dependency>
 			<groupId>com.github.leonidesfernando</groupId>
 			<artifactId>jpa-converter</artifactId>
-			<version>0.4</version>
+			<version>0.6</version>
 		</dependency>
 ```
 
@@ -64,6 +66,29 @@ O mapeamento fica totalmente transparente, não é necessário realizar nenhuma 
 	@Column(name="ultimo_mes_ano_sincronizado")
 	private YearMonth ultimoMesAnoSincronizado;
 ```
+
+## 4. Changelog
+Versão 0.6 otimizando persistência `YearMonth` de `String` para `Integer`.
+
+Guia de migração as versões anteriores para a 0.6:
+
+Sql's para o _Postgresql_
+
+Na(s) tabela(s) que possui o tipo Year, criar uma coluna que passará armazenar o tipo YearMonth persistido:
+```sql
+alter table tabela_com_mes_ano add colum mesAnoInteger integer;
+```
+
+Em seguida dispara um update na(s) tabelas envolvidas:
+```sql
+update tabela_com_mes_ano set mesAnoInteger = 
+(select cast ((substring(mesAnoString FROM '[0-9]*')) as int) * 100 + cast(substring(mesAnoString FROM '..$') as int) from tabela_com_mes_ano);
+```
+
+Remover a(s) coluna antiga das tabelas envolvidas:
+```sql
+alter table tabela_com_mes_ano drop column mesAnoString;
+```        
 
 # Quer contribuir com o projeto?
 Você pode ajudar, codificando, enviando sugestões, documentando ou reportando bugs.
