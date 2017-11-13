@@ -4,7 +4,7 @@
 
     <groupId>com.github.leonidesfernando</groupId>
     <artifactId>jpa-converter</artifactId>
-    <version>0.8-SNAPSHOT</version>
+    <version>0.8</version>
     <packaging>jar</packaging>
 
     <name>JPA Converter</name>
@@ -111,7 +111,7 @@
         <url>https://github.com/leonidesfernando/jpa-converver.git</url>
         <connection>scm:git:https://github.com/leonidesfernando/jpa-converver.git</connection>
         <developerConnection>scm:git:https://github.com/leonidesfernando/jpa-converver.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>jpa-converter-0.8</tag>
   </scm>
 
     <developers>
