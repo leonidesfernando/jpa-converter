@@ -2,7 +2,7 @@
 
 # jpa-converter
 É uma biblioteca para ajudar os desenvolvedores Java que fazem uso da JPA, persistir os principais tipos do pacote <code>java.time</code> do _Java8_.
-A versão `0.9` suporta os tipos:
+A versão `0.12` suporta os tipos:
 
 ```java
   java.time.LocalDate
@@ -30,7 +30,7 @@ No _pom.xml_ defina o repositório e a dependência
 		<dependency>
 			<groupId>com.github.leonidesfernando</groupId>
 			<artifactId>jpa-converter</artifactId>
-			<version>0.9</version>
+			<version>0.12</version>
 		</dependency>
 ```
 
@@ -67,9 +67,9 @@ O mapeamento fica totalmente transparente, não é necessário realizar nenhuma 
 	private YearMonth ultimoMesAnoSincronizado;
 ```
 ## 4. Changelog
-Versão 0.9 otimizando persistência `YearMonth` de `String` para `Integer`.
+Versão 0.12 otimizando persistência `YearMonth` de `String` para `Integer`.
 
-Guia de migração as versões anteriores para a 0.9:
+Guia de migração as versões anteriores para a 0.12:
 
 Sql's para o _Postgresql_
 
