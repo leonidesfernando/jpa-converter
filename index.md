@@ -2,7 +2,7 @@
 
 # jpa-converter
 É uma biblioteca para ajudar os desenvolvedores Java que fazem uso da JPA, persistir os principais tipos do pacote <code>java.time</code> do _Java8_.
-A versão `0.6` suporta os tipos:
+A versão `0.12` suporta os tipos:
 
 ```java
   java.time.LocalDate
@@ -30,7 +30,7 @@ No _pom.xml_ defina o repositório e a dependência
 		<dependency>
 			<groupId>com.github.leonidesfernando</groupId>
 			<artifactId>jpa-converter</artifactId>
-			<version>0.6</version>
+			<version>0.12</version>
 		</dependency>
 ```
 
@@ -66,11 +66,10 @@ O mapeamento fica totalmente transparente, não é necessário realizar nenhuma 
 	@Column(name="ultimo_mes_ano_sincronizado")
 	private YearMonth ultimoMesAnoSincronizado;
 ```
-
 ## 4. Changelog
-Versão 0.6 otimizando persistência `YearMonth` de `String` para `Integer`.
+Versão 0.12 otimizando persistência `YearMonth` de `String` para `Integer`.
 
-Guia de migração as versões anteriores para a 0.6:
+Guia de migração as versões anteriores para a 0.12:
 
 Sql's para o _Postgresql_
 
@@ -89,11 +88,13 @@ Remover a(s) coluna antiga das tabelas envolvidas:
 ```sql
 alter table tabela_com_mes_ano drop column mesAnoString;
 ```        
-
+                                       
 # Quer contribuir com o projeto?
 Você pode ajudar, codificando, enviando sugestões, documentando ou reportando bugs.
 Basta entrar no grupo [JPA-Conveter Group] (https://groups.google.com/forum/#!forum/jpa-converter)
 	
 # Licença
 O *jpa-converter* está sob a licença LGPl 2.1.Veja a licença inclusa no projeto para mais detalhes ou acesse: http://www.gnu.org/licenses/lgpl-2.1.html
-	
+
+# Site
+http://leonidesfernando.github.io/jpa-converter/
